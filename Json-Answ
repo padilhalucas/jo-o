@@ -1,7 +1,7 @@
 {
-"greet": [{"text": "Oi eu me chamo João, ótimo receber sua mensagem, qual seu nome?"},{"text": "Oi, meu nome é João, ótimo receber sua mensagem, qual seu nome?"},{"text": "Oi, ótimo receber sua mensagem! Qual seu nome?"}]
-"video_about": [{"text": "Oi eu me chamo João, ótimo receber sua mensagem, qual seu nome?"},{"text": "Oi, meu nome é João, ótimo receber sua mensagem, qual seu nome?"},{"text": "Oi, ótimo receber sua mensagem! Qual seu nome?"}]
-"video_of": [{"text": "Oi eu me chamo João, ótimo receber sua mensagem, qual seu nome?"},{"text": "Oi, meu nome é João, ótimo receber sua mensagem, qual seu nome?"},{"text": "Oi, ótimo receber sua mensagem! Qual seu nome?"}]
+"greet": [{"text": "Oi eu me chamo João, ótimo receber sua mensagem, qual seu nome?"},{"text": "Oi, meu nome é João, ótimo receber sua mensagem, qual seu nome?"},{"text": "Oi, ótimo receber sua mensagem! Qual seu nome?"}],
+"video_about": [{"text": "Ótimo, aqui vai um vídeo que talvez você goste..."},{"text": "Ótimo, aqui vai um vídeo que talvez você goste..."},{"text": "Ótimo, aqui vai um vídeo que talvez você goste..."}],
+"video_of": [{"text": "Ótimo, aqui vai um vídeo que talvez você goste..."},{"text": "Ótimo, aqui vai um vídeo que talvez você goste..."},{"text": "Ótimo, aqui vai um vídeo que talvez você goste..."}]
 }
 
 

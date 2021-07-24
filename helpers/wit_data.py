@@ -1,9 +1,11 @@
-def get_entity(data):
+def get_entity(data,entity):
+    text = 'none'
     try:
-        pass
+        text = data.get('entities').get(entity)[0].get('body')
+        print("entrou aqui")
     except:
         pass
-
+    return text
 def get_intent(data):
     try:
         data_intent = data.get('intents')

@@ -2,10 +2,13 @@ from wit import Wit
 import os
 from dotenv import load_dotenv
 import json
-import wit_data as wt
+from helpers import wit_data as wt
 import random
 import csv
+from helpers import youtube as yt
 
+class witClass:
+    response = {}
 
 load_dotenv()
 
@@ -13,6 +16,8 @@ WIT_TOKEN = os.getenv("WIT_TOKEN")
 client = Wit(WIT_TOKEN)
 
 op = {}
+witPoint = witClass()
+
 def file_answers(intent):
     data = ''
     with open("Json-Answ", "r") as file:
@@ -32,24 +37,37 @@ def list_intents():
               print(linha)
 
 def mount_comands(comands):
-    op[comands[0]]=comands[1]
+    op[comands[0]]=eval(comands[1])
 
 
 def dispacher(intent):
-    return op[intent]
+    return str(op[intent]())
     
 
 def text_only(intent):
     answer = file_answers(intent)
 
-def search_video_of():
-    pass
+def video_of():
+    entity_value = wt.get_entity(witPoint.response,'subject:subject')
+    video = yt.search_video("videos de " + str(entity_value))
+    answer = file_answers('video_of')
+    answer += "\n" + str(video)
+    return answer
+    
 
 def search_video_about():
-    pass
+    entity_value = wt.get_entity(witPoint.response,'subject:subject')
+    video = yt.search_video("videos sobre" + str(entity_value))
+    answer = file_answers('video_of')
+    answer += "\n" + str(video)
+    return answer
 
 def search_video_with():
-    pass
+    entity_value = wt.get_entity(witPoint.response,'subject:subject')
+    video = yt.search_video("videos com" + str(entity_value))
+    answer = file_answers('video_of')
+    answer += "\n" + str(video)
+    return answer
 
 def set_volume():
     pass
@@ -61,10 +79,13 @@ def set_font():
     pass
 
 def resp(message):
-    response = client.message(message)
+    
+    witPoint.response = client.message(message)
+    response = witPoint.response
+    print(response)
     intent = wt.get_intent(response)
     answer = dispacher(intent)
     
-    return response
+    return answer
     
 
