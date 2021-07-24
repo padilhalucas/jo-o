@@ -44,29 +44,50 @@ def dispacher(intent):
     return str(op[intent]())
     
 
-def text_only(intent):
+def text_only():
+    intent = wt.get_intent(witPoint.response)
     answer = file_answers(intent)
+    return answer
 
 def video_of():
-    entity_value = wt.get_entity(witPoint.response,'subject:subject')
+    entity_value = wt.get_entity_value(witPoint.response,'subject:subject')
     video = yt.search_video("videos de " + str(entity_value))
     answer = file_answers('video_of')
-    answer += "\n" + str(video)
+    answer += "@@@" + str(video)
     return answer
     
+def personalized_answer(intent, values):
+    answer = file_answers(intent)
+    answer
 
-def search_video_about():
-    entity_value = wt.get_entity(witPoint.response,'subject:subject')
-    video = yt.search_video("videos sobre" + str(entity_value))
-    answer = file_answers('video_of')
-    answer += "\n" + str(video)
+
+def about_me():
+    name = wt.get_entity_value(witPoint.response,'name:name')
+    location = wt.get_entity_value(witPoint.response,'wit$location:location')
+    age = location = wt.get_entity_value(witPoint.response,'wit$duration:duration') #sometimes NLP doesn't take age with age_of_person
+    if age is None:
+        age = location = wt.get_entity_value(witPoint.response,'wit$age_of_person:age_of_person')
+    
+    #aqui vamos usar a resposta personalizada, falta implementar
+    answer = file_answers('about_me')
     return answer
 
-def search_video_with():
-    entity_value = wt.get_entity(witPoint.response,'subject:subject')
+def introduce_bot():
+    answer = file_answers('introduce_bot')
+    return answer
+
+def video_about():
+    entity_value = wt.get_entity_value(witPoint.response,'subject:subject')
+    video = yt.search_video("videos sobre" + str(entity_value))
+    answer = file_answers('video_of')
+    answer += "@@@" + str(video)
+    return answer
+
+def video_with():
+    entity_value = wt.get_entity_value(witPoint.response,'subject:subject')
     video = yt.search_video("videos com" + str(entity_value))
     answer = file_answers('video_of')
-    answer += "\n" + str(video)
+    answer += "@@@" + str(video)
     return answer
 
 def set_volume():
@@ -78,6 +99,18 @@ def set_speed():
 def set_font():
     pass
 
+def dataTreatment(answer):
+    data = {}
+    dataSliced = answer.split("@@@")
+    if len(dataSliced) ==1:
+        data['msg'] = dataSliced[0]
+    else:
+        print(dataSliced)
+        data['msg'] = dataSliced[0]
+        data['video'] = dataSliced[1]
+    return data
+    
+    
 def resp(message):
     
     witPoint.response = client.message(message)
@@ -85,7 +118,9 @@ def resp(message):
     print(response)
     intent = wt.get_intent(response)
     answer = dispacher(intent)
+    data = dataTreatment(answer)
     
-    return answer
+
+    return data
     
 

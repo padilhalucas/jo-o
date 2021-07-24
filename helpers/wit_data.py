@@ -1,8 +1,7 @@
-def get_entity(data,entity):
+def get_entity_value(data,entity):
     text = 'none'
     try:
         text = data.get('entities').get(entity)[0].get('body')
-        print("entrou aqui")
     except:
         pass
     return text

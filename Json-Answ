@@ -1,7 +1,9 @@
 {
 "greet": [{"text": "Oi eu me chamo João, ótimo receber sua mensagem, qual seu nome?"},{"text": "Oi, meu nome é João, ótimo receber sua mensagem, qual seu nome?"},{"text": "Oi, ótimo receber sua mensagem! Qual seu nome?"}],
 "video_about": [{"text": "Ótimo, aqui vai um vídeo que talvez você goste..."},{"text": "Ótimo, aqui vai um vídeo que talvez você goste..."},{"text": "Ótimo, aqui vai um vídeo que talvez você goste..."}],
-"video_of": [{"text": "Ótimo, aqui vai um vídeo que talvez você goste..."},{"text": "Ótimo, aqui vai um vídeo que talvez você goste..."},{"text": "Ótimo, aqui vai um vídeo que talvez você goste..."}]
+"video_of": [{"text": "Ótimo, aqui vai um vídeo que talvez você goste..."},{"text": "Ótimo, aqui vai um vídeo que talvez você goste..."},{"text": "Ótimo, aqui vai um vídeo que talvez você goste..."}],
+"about_me": [{"text": "É um prazer conhecer você. Se você tiver dúvidas do que posso fazer, basta me mandar uma mensagem perguntando 'Como você pode me ajudar?'. Mas caso já me conheça, estou a sua disposição."},{"text": "É um prazer conhecer você. Se você tiver dúvidas do que posso fazer, basta me mandar uma mensagem perguntando 'Como você pode me ajudar?'. Mas caso já me conheça, estou a sua disposição."},{"text": "É um prazer conhecer você. Se você tiver dúvidas do que posso fazer, basta me mandar uma mensagem perguntando 'Como você pode me ajudar?'. Mas caso já me conheça, estou a sua disposição."}],
+"introduce_bot": [{"text": "Eu sou João, é um prazer conversar com você. Posso te ajudar escolhendo vídeos do youtube. Que tal vermos um vídeo, você pode pedir 'Quero ver um vídeo sobre a Carosela' ou qualquer outra coisa que preferir."},{"text": "Eu sou João, é um prazer conversar com você. Posso te ajudar escolhendo vídeos do youtube. Que tal vermos um vídeo, você pode pedir 'Quero ver um vídeo sobre a Carosela' ou qualquer outra coisa que preferir."},{"text": "Eu sou João, é um prazer conversar com você. Posso te ajudar escolhendo vídeos do youtube.Que tal vermos um vídeo, você pode pedir 'Quero ver um vídeo sobre a Carosela' ou qualquer outra coisa que preferir."}]
 }
 
 

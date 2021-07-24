@@ -1,7 +1,8 @@
 greet,text_only
-video_about,search_video_about
+video_about,video_about
 video_of,video_of
-video_with,search_video_with
+video_with,video_with
 speed,set_speed
 caption_select,video_caption
-about_me,user_about
+about_me,about_me
+introduce_bot,introduce_bot
