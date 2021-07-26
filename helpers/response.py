@@ -6,6 +6,7 @@ from helpers import wit_data as wt
 import random
 import csv
 from helpers import youtube as yt
+import requests
 
 class witClass:
     response = {}
@@ -83,6 +84,20 @@ def video_about():
     answer += "@@@" + str(video)
     return answer
 
+def movie_recsys():
+    entity_value = wt.get_entity_value(witPoint.response,'movie:movie')
+    try:
+        req = requests.get('https://recsys-joao.herokuapp.com/movie?title=' + str(entity_value))
+    
+        part = req.json()
+        movie = part[0].get('Name')
+        video = yt.search_video("trailer oficial " + str(movie))
+        answer = file_answers('movie_recsys')
+        answer += "@@@" + str(video)
+        return answer
+    except:
+        return 'Infelizmente não consegui encontrar seu vídeo, mas você pode perguntar por outro se quiser.'
+
 def video_with():
     entity_value = wt.get_entity_value(witPoint.response,'subject:subject')
     video = yt.search_video("videos com" + str(entity_value))
@@ -103,11 +118,11 @@ def dataTreatment(answer):
     data = {}
     dataSliced = answer.split("@@@")
     if len(dataSliced) ==1:
-        data['msg'] = dataSliced[0]
+        data['msg'] = str(dataSliced[0])
     else:
         print(dataSliced)
-        data['msg'] = dataSliced[0]
-        data['video'] = dataSliced[1]
+        data['msg'] = str(dataSliced[0])
+        data['video'] = str(dataSliced[1])
     return data
     
     

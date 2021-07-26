@@ -1,3 +1,4 @@
+
 def get_entity_value(data,entity):
     text = 'none'
     try:

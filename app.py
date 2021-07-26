@@ -3,7 +3,7 @@ from helpers import response
 app = Flask(__name__)
 
 @app.route('/conversation', methods=['POST'])
-def test():
+def conversation():
     data = request.get_json()
     message = data.get('message')
     return response.resp(message)
